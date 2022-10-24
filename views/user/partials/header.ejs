@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from themes.pixelstrap.com/multikart/front-end/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Mar 2021 07:42:39 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Enlights">
+    <meta name="keywords" content="Enlights">
+    <meta name="author" content="Enlights">
+    <link rel="icon" href="../assets/images/icon/Bakery.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+    <title>Enlights</title>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&amp;display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+                  
+    <!--Slick slider css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
+
+    <!-- Animate icon -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify-icons.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+    <!-- Script Files -->
+    <script>
+        function printPageArea(tagid){
+            var hashid = "#"+ tagid;
+            var tagname =  $(hashid).prop("tagName").toLowerCase() ;
+            var attributes = ""; 
+            var attrs = document.getElementById(tagid).attributes;
+              $.each(attrs,function(i,elem){
+                attributes +=  " "+  elem.name+" ='"+elem.value+"' " ;
+              })
+            var divToPrint= $(hashid).html() ;
+            var head = "<html><head>"+ $("head").html() + "</head>" ;
+            var allcontent = head + "<body  onload='window.print()' >"+ "<" + tagname + attributes + ">" +  divToPrint + "</" + tagname + ">" +  "</body></html>"  ;
+            var newWin= window.open('', '', 'left=0,top=0,width=1000,height=900,toolbar=0,scrollbars=0,status=0');
+            newWin.document.open();
+            newWin.document.write(allcontent);
+            newWin.document.close();
+        }
+    </script>
+</head>
+
+<body class="theme-color-1">
+    <!-- header start -->
+    <header>
+        <div class="mobile-fix-option"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="main-menu" style="height: 100px;">
+                        <div class="menu-left">
+                            <div class="brand-logo">
+                                <!-- <a href="/"><img src="../assets/images/icon/Bakery.png"
+                                        class="img-fluid blur-up lazyload" alt=""></a> -->
+                                        <h2>Enlight</h2>
+                            </div>
+                        </div>
+                        <div class="menu-right pull-right">
+                            <div>
+                                <nav id="main-nav ">
+                                    <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
+                                    <ul id="main-menu" class="sm pixelstrap sm-horizontal">
+                                        <li>
+                                            <div class="mobile-back text-end">Back<i class="fa fa-angle-right ps-2"
+                                                    aria-hidden="true"></i></div>
+                                        </li>
+                                        <li>
+                                            <a href="/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">product <i class="fas fa-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="/categories">All</a>
+                                                </li>
+                                                <li><a href="/categories/Cakes">Cakes</a>
+                                                </li>
+                                                <li><a href="/categories/Pizza">Pizza</a>
+                                                </li>
+                                                <li><a href="/categories/Biscuits">Biscuits</a>
+                                                </li>
+                                                <li><a href="/categories/Pasteries">Pastries</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/about-us">About Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/contact">Contact</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Account<i class="fas fa-chevron-down"></i></a>
+                                            <ul>
+                                            <% if(!currentUser){ %>
+                                                <li>
+                                                    <a href="/login">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/register">Create account</a>
+                                                </li>
+                                                <% } else { %>
+                                                <li>
+                                                    <a href="/profile">Account</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/logout">Logout</a>
+                                                </li>                            
+                                            <% } %>
+                                            </ul>
+                                        </li>
+                                        
+                                        <% if(!currentUser){ %>
+                                            <li class="list-inline-item">
+                                                <a class="text-black" href="/profile" style="padding-right: 15px;"><i class="fas fa-user-circle fa-lg mx-2"></i>Profile</a>
+                                            </li>  
+                                        <% } else { %>
+                                            <li class="list-inline-item">
+                                                <a class="text-black" href="/profile" style="padding-right: 15px;"><i class="fas fa-user-circle fa-lg mx-2"></i><%= currentUser.username %></a>
+                                            </li>                   
+                                        <% } %>                            
+                                      
+                                    </ul>
+                                    
+                                </nav>
+                            </div>
+                            <div>
+                                <div class="icon-nav">
+                                    <ul>
+                                        <li class="onhover-div mobile-cart">
+                                            <a href="/cart"><img src="../assets/images/icon/cart-1.png"
+                                                class="img-fluid blur-up lazyload" alt=""></a>
+                                            <!-- <span class="cart_qty_cls">2</span>                                             -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->

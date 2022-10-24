@@ -1,0 +1,59 @@
+<%- include('partials/header'); -%>
+    <!-- personal deatail section start -->
+    <section class="contact-page register-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>PERSONAL DETAIL</h3>
+                    <form class="theme-form">
+                        <div class="form-row row">
+                            <div class="col-md-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name"
+                                    required="" value="<%= user.username %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">Phone number</label>
+                                <input type="text" class="form-control" id="review" placeholder="Number"
+                                 required="" value="<%= user.number %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="Email"
+                                 required="" value="<%= user.email %>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Address</label>
+                                <input type="text" class="form-control" id="email" placeholder="Address" 
+                                 required="" value="<%= user.address %>">
+                            </div>
+                            <div class="form-row row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-sm btn-solid" type="submit">Update Profile</button>
+                                    <button class="btn btn-sm btn-solid" type="submit">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section ends -->
+
+
+    <!-- address section start -->
+    <section class="contact-page register-page section-b-space">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="theme-form">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section ends -->
+
+<%- include('partials/footer'); -%>
